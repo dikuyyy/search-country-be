@@ -4,7 +4,7 @@ const port = 3000;
 
 const data = require('./countriesV2.json');
 
-app.use('/images', express.static('public/data'));
+app.use('/images', express.static('public'));
 app.get('/name/:name', (req, res) => {
     const name = req.params.name;
     const isFullName = req.query.fullName === 'true';
