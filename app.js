@@ -1,10 +1,11 @@
 const express = require('express');
+const helmet = require('helmet')
 const app = express();
 const port = 3000;
 
 const data = require('./countriesV2.json');
 
-app.use('/images', express.static('public/data'));
+app.use("/images", express.static(__dirname + "/public/data"));
 app.get('/name/:name', (req, res) => {
     const name = req.params.name;
     const isFullName = req.query.fullName === 'true';
@@ -15,7 +16,7 @@ app.get('/name/:name', (req, res) => {
         return {
             code: item.alpha3Code,
             name: item.name,
-            imageURL: `https://search-country-be.vercel.app/images/${item.flag}`,
+            imageURL: `/images/${item.flag}`,
         }
     })
 
