@@ -1,11 +1,12 @@
 const express = require('express');
-const helmet = require('helmet')
 const app = express();
 const port = 3000;
+const path = require('path');
 
 const data = require('./countriesV2.json');
 
-app.use("/images", express.static(__dirname + "/public/data"));
+app.use("/images", express.static(path.resolve(__dirname, '/public/data')));
+
 app.get('/name/:name', (req, res) => {
     const name = req.params.name;
     const isFullName = req.query.fullName === 'true';
