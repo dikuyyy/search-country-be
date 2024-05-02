@@ -4,11 +4,11 @@
   },
   "name": "search-country-be",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "api/index.js",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node api/index.js"
   },
   "keywords": [],
   "author": "",
