@@ -15,7 +15,7 @@ app.get('/name/:name', (req, res) => {
         return {
             code: item.alpha3Code,
             name: item.name,
-            imageURL: `http://localhost:${port}/images/${item.flag}`,
+            imageURL: `https://search-country-be.vercel.app//images/${item.flag}`,
         }
     })
 
